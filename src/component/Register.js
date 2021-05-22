@@ -70,7 +70,6 @@ function Register() {
             registerDetails.creds
         ).then(function (response) {
             // handle success
-            console.log(response);
             localStorage.setItem('token', response.data.token)
             alert('account created!!')
             window.location.href='/password-list'
