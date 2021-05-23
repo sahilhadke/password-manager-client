@@ -1,371 +1,347 @@
-/* width */
-::-webkit-scrollbar {
-  width: 0px;
-}
-
 * {
   margin: 0;
   padding: 0;
 }
 
-input[type="password"] {
-  -webkit-text-security: disc;
-  font-size: 20px;
-}
-
 body {
-  background-color: #131112;
-  color: #E8F1F2;
+  background-color: #ADBAEB;
+  color: #020417;
+  padding: 10px;
   font-family: 'Roboto', sans-serif;
+  height: 100vh;
 }
 
-@media (min-width: 700px) {
+@media (max-width: 500px) {
   body {
-    background-color: #E8F1F2;
+    padding: 0px;
   }
+}
+
+#root {
+  height: 100%;
 }
 
 .app {
-  max-height: 100vh;
-  overflow-y: scroll;
-  padding: 0 25px;
+  margin: 0 auto;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 20px 1px #9D9AB4;
+          box-shadow: 0px 0px 20px 1px #9D9AB4;
+  position: relative;
+  height: 100%;
+  border-radius: 15px;
+  max-width: 350px;
+  background: #F4F6FD;
 }
 
-@media (min-width: 700px) {
+@media (max-width: 500px) {
   .app {
-    width: 500px;
-    margin: 0 auto;
-    background-color: #131112;
-    height: 100vh;
+    border-radius: 0;
+    max-width: 100%;
   }
 }
 
-.login-text {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 14px;
+.top-nav .input-col {
+  position: relative;
 }
 
-.list-title,
-.main-title {
+.top-nav .input-col input {
+  height: 40px;
+  color: #373B5E;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 0px 11px 1px #f1f1f1;
+          box-shadow: 0px 0px 11px 1px #f1f1f1;
+}
+
+.top-nav .input-col input:focus {
+  outline: none;
+}
+
+.top-nav .input-col i {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 30px;
+  color: #2643C4;
+}
+
+.top-nav .icon-col {
+  position: relative;
+}
+
+.top-nav .icon-col i {
+  cursor: pointer;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  color: #2643C4;
+}
+
+.top-nav .row {
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.top-text {
+  margin: 30px 0;
+}
+
+.top-text h2 {
+  color: #373B5E;
   text-transform: uppercase;
   font-size: 22px;
-  margin-top: 100px;
   letter-spacing: 2px;
-  color: #2e8cd4;
   font-weight: 400;
 }
 
-.list-title {
-  margin-top: 50px !important;
+.password-list .pass-list-scroll {
+  max-height: 400px;
+  overflow-y: scroll;
 }
 
-.slick-form {
-  width: 100%;
-  margin-top: 50px;
-}
-
-.slick-form label {
+.password-list p {
   text-transform: uppercase;
-  color: #444;
-  font-size: 13px;
-  letter-spacing: 2px;
-}
-
-.slick-form input {
-  display: block;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #444;
-  height: 30px;
-  color: #E8F1F2;
-  padding: 0 10px 5px 10px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  margin-bottom: 30px;
-}
-
-.slick-form input:focus {
-  outline: none;
-  border: none;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  border-bottom: 1px solid #2e8cd4;
-}
-
-.slick-form .input-master-div {
-  margin-bottom: 30px;
-  border-bottom: 1px solid #444;
-}
-
-.slick-form .input-master-div .input-div {
-  width: 100%;
-  margin: auto 0;
-}
-
-.slick-form .input-master-div .input-div .input-col {
-  padding: 0;
-}
-
-.slick-form .input-master-div .input-div .input-col input {
-  display: inline;
-  width: 100%;
-  margin-bottom: 0;
-  border: none;
-}
-
-.slick-form .input-master-div .input-div .input-col input:focus {
-  outline: none;
-  border: none;
-}
-
-.slick-form .input-master-div .input-div i {
-  width: 30px;
-  color: #444;
-  height: 30px;
-  margin: 0 auto;
-  cursor: pointer;
-  text-align: center;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.slick-form .input-master-div .input-div i:hover {
-  color: #2e8cd4 !important;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.highlight {
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  border-bottom: 1px solid #2e8cd4 !important;
-}
-
-.highlight .fa,
-.highlight label {
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  color: #2e8cd4 !important;
-}
-
-.slick-button {
-  width: 100%;
-  border: none;
-  background: #444;
-  padding: 20px auto;
-  height: 40px;
-  color: #E8F1F2;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  color: #9D9AB4;
   font-size: 14px;
-  border-radius: 5px;
-  font-weight: bold;
-  margin: 10px auto;
-  cursor: pointer;
-}
-
-.pass-detail-div,
-.search-bar-div {
-  width: 100%;
-  padding: 20px 0;
-}
-
-.pass-detail-div .pass-detail-container,
-.pass-detail-div .search-bar-container,
-.search-bar-div .pass-detail-container,
-.search-bar-div .search-bar-container {
-  background-color: #444;
-  padding: 0 5px;
-  border-radius: 10px;
-}
-
-.pass-detail-div .pass-detail-container input,
-.pass-detail-div .search-bar-container input,
-.search-bar-div .pass-detail-container input,
-.search-bar-div .search-bar-container input {
-  width: 100%;
-  height: 50px;
-  background: #444;
-  border: none;
-  border-radius: 10px;
-  padding: 0 15px;
-  color: #fff;
-  position: relative;
   letter-spacing: 2px;
-}
-
-.pass-detail-div .pass-detail-container input:focus,
-.pass-detail-div .search-bar-container input:focus,
-.search-bar-div .pass-detail-container input:focus,
-.search-bar-div .search-bar-container input:focus {
-  outline: none;
-  border: none;
-}
-
-.pass-detail-div .pass-detail-container button,
-.pass-detail-div .search-bar-container button,
-.search-bar-div .pass-detail-container button,
-.search-bar-div .search-bar-container button {
-  position: relative;
-  right: 20px;
-  border: none;
-  background: transparent;
-  height: 50px;
-  width: 50px;
-}
-
-.pass-detail-div .pass-detail-container button i,
-.pass-detail-div .search-bar-container button i,
-.search-bar-div .pass-detail-container button i,
-.search-bar-div .search-bar-container button i {
-  color: #2e8cd4;
-}
-
-.pass-detail-div .pass-detail-container button,
-.search-bar-div .pass-detail-container button {
-  right: auto;
-  left: 0;
-}
-
-.pass-detail-div {
-  padding-bottom: 0;
-}
-
-.passlist {
-  padding: 10px;
-}
-
-.passlist a {
-  color: #E8F1F2 !important;
-}
-
-.passlist a:hover {
-  color: #2e8cd4 !important;
 }
 
 .single-pass {
-  margin: 20px auto 20px auto;
-  padding-bottom: 20px;
-  cursor: pointer;
-  border-bottom: 1px solid #444;
+  height: 50px;
+  margin: 10px 0;
+  background: #fff;
+  border-radius: 10px;
 }
 
-.single-pass .icon-div {
-  padding: 0;
+.single-pass .icon-col {
+  position: relative;
+}
+
+.single-pass .icon-col i {
+  position: absolute;
+  text-align: center;
+  color: #A056C5;
+  text-shadow: 0px 0px 12px #A056C5;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.single-pass .text-col {
+  position: relative;
+}
+
+.single-pass .text-col p {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  color: #020417;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.single-pass .text-col i {
+  position: absolute;
+  right: 20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  top: 50%;
+  color: #A056C5;
+  text-shadow: 0px 0px 12px #A056C5;
+}
+
+.add-button {
+  position: absolute;
+  bottom: 20px;
+  cursor: pointer;
+  right: 20px;
+  background: #2643C4;
+  -webkit-box-shadow: 0 1px 18px 1px #ADBAEB;
+          box-shadow: 0 1px 18px 1px #ADBAEB;
   height: 50px;
+  border-radius: 30px;
+  width: 50px;
   text-align: center;
 }
 
-.single-pass .icon-div img {
-  height: 100%;
-  border-radius: 50px;
+.add-button p {
+  color: #F4F6FD;
+  font-size: 32px;
+  text-align: center;
 }
 
-.single-pass .title-div {
-  padding: 0;
-}
-
-.single-pass .title-div p {
-  padding: 0 20px;
+.close-button {
   position: absolute;
-  top: 50%;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  cursor: pointer;
+  border: 1px solid #2643C4;
+  height: 50px;
+  border-radius: 30px;
+  width: 50px;
+  text-align: center;
 }
 
-.single-pass .copy-button-div {
-  padding: 0;
+.close-button i {
+  line-height: 50px;
+  color: #2643C4;
+  font-size: 20px;
+  text-align: center;
 }
 
-.single-pass .copy-button-div i {
-  padding: 0 20px;
+.delete-button {
   position: absolute;
-  top: 50%;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  bottom: 20px;
+  left: 20px;
+  background: #ee4141;
+  border: 1px solid #F4F6FD;
+  -webkit-box-shadow: 0 0 15px -4px #373B5E;
+          box-shadow: 0 0 15px -4px #373B5E;
+  height: 50px;
+  border-radius: 30px;
+  cursor: pointer;
+  width: 50px;
+  text-align: center;
+}
+
+.delete-button i {
+  line-height: 50px;
+  color: #F4F6FD;
+  font-size: 20px;
+  text-align: center;
 }
 
 .add-pass-button {
   position: absolute;
+  cursor: pointer;
   bottom: 20px;
+  right: 20px;
+  background: #2643C4;
+  -webkit-box-shadow: 0 1px 18px 1px #ADBAEB;
+          box-shadow: 0 1px 18px 1px #ADBAEB;
+  height: 50px;
+  padding: 0 20px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.add-pass-button p {
+  color: #F4F6FD;
+  font-size: 14px;
+  text-align: center;
+  line-height: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.pass-form label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #9D9AB4;
+}
+
+.pass-form .form-input {
+  position: relative;
+}
+
+.pass-form .form-input input {
+  width: 100%;
+  color: #373B5E;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+  padding: 0px 10px;
+  -webkit-box-shadow: 0 0 10px -5px #373B5E;
+          box-shadow: 0 0 10px -5px #373B5E;
+}
+
+.pass-form .form-input input:focus {
+  outline: none;
+}
+
+.pass-form .form-input i {
+  position: absolute;
+  right: 10px;
+  color: #A056C5;
+  cursor: pointer;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.side-text {
+  position: absolute;
+  bottom: 16px;
+  left: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #373B5E;
+}
+
+.home {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.home h2 {
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  color: #373B5E;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.home-button {
+  position: absolute;
+  bottom: 100px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: 50px;
-  height: 50px;
+  background: #2643C4;
+  border: none;
+  width: 200px;
+  height: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 5px 2px #9D9AB4;
+          box-shadow: 0 0 5px 2px #9D9AB4;
+  color: #F4F6FD;
 }
 
-.add-pass-button i {
-  border: 2px solid #E8F1F2;
-  border-radius: 50px;
+.isTop {
+  bottom: 150px;
+}
+
+#modal .overlay {
   width: 100%;
-  text-align: center;
-  font-size: 26px;
   height: 100%;
-  padding: 10px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  position: relative;
-  background-color: #2e8cd4;
-}
-
-.add-pass-button i:hover {
-  background: #2e8cd4;
-  color: #E8F1F2 !important;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.delete-button {
-  background: #c71717 !important;
-}
-
-.delete-button:hover {
-  background: #c71717 !important;
-}
-
-.delete-button:hover {
-  background: #a71616 !important;
-}
-
-.edit-button,
-.send-button,
-.close-button {
-  color: #2e8cd4;
-  border: 2px solid #E8F1F2;
-  height: 50px;
-  padding-top: 10px;
-  width: 50px;
-  font-size: 20px;
-  text-align: center;
-  border-radius: 30px;
+  border-radius: 10px;
   position: absolute;
-  top: 20px;
-  left: 20px;
-  cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 1;
+  top: 0;
+  left: 0;
 }
 
-.edit-button,
-.send-button {
-  left: auto;
-  right: 10px;
-}
-
-.edit-button:hover,
-.send-button:hover,
-.close-button:hover {
-  background-color: #2e8cd4;
-  color: #E8F1F2;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+#modal .overlay p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #020417;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 /*# sourceMappingURL=style.css.map */
