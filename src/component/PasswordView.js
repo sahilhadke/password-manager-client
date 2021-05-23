@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import SinglePassword from '../UI/SinglePassword'
+import Modal from '../UI/Modal'
 
 function PasswordView() {
 
     const [passList, setPassList] = useState([])
+    const [dispModal, setDispModal] = useState(true)
 
     const [searchText, setSearchText] = useState('')
 
@@ -25,7 +27,7 @@ function PasswordView() {
           
           const resData = await axios.get(myAPI, config)
           setPassList(resData.data)
-
+          setDispModal(false)
     
         }catch(e){
         }     
@@ -43,6 +45,12 @@ function PasswordView() {
 
     return (
         <div>
+            {
+                dispModal &&
+                <Modal />
+            }
+           
+
             <div className="top-nav row">
                 <div className="col-10 text-center input-col">
                     <input placeholder="Search" value={searchText} id='search-bar' onChange={Search}/>
@@ -65,14 +73,19 @@ function PasswordView() {
 
                 <div className='pass-list-scroll'>
                     {
-                    passList.map((pass) => {
-                        if(pass.website.search(searchText) != -1){
-                            return <Link key={pass._id} to={`/password/view/${pass._id}`}>
-                            <SinglePassword website={pass.website}/>
-                        </Link> 
-                        }
+                        passList.length === 0 ? <p>No passwords found</p> :
                         
-                    })}
+                            passList.map((pass) => {
+                                if(pass.website.search(searchText) != -1){
+                                    return <Link key={pass._id} to={`/password/view/${pass._id}`}>
+                                    <SinglePassword website={pass.website}/>
+                                </Link> 
+                                }
+                                
+                            })
+                    }
+                        
+                    
                 </div>
             </div>
 

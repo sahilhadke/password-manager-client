@@ -4,6 +4,7 @@ import HomeButton from '../UI/HomeButton'
 import Input from '../UI/Input'
 import Modal from '../UI/Modal'
 
+
 const DetailsPage = (props) => {
     const [details, setDetails] = useState({
         username: '',
@@ -11,6 +12,9 @@ const DetailsPage = (props) => {
         email: '',
         password: ''
     })
+
+    const [dispModal, setDispModal] = useState(false)
+
     const axios = require('axios')
     var showModal = false;
 
@@ -23,7 +27,7 @@ const DetailsPage = (props) => {
 
     const deletePassword = async () => {
         try{
-            
+            setDispModal(true)
             let config = {
                 mode: 'no-cors',
                 headers: {
@@ -39,10 +43,14 @@ const DetailsPage = (props) => {
             )
             if(resData.status === 200){
                 alert('password deleted')
+                setDispModal(false)
                 window.location.href = '/password/view'
             }
         }catch{
-        } 
+            setDispModal(false)
+        }finally{
+            setDispModal(false)
+        }
     }
 
     const editPassword = () => {
@@ -51,6 +59,8 @@ const DetailsPage = (props) => {
 
     const savePassword = async () => {
         try{
+
+            setDispModal(true)
             let config = {
                 mode: 'no-cors',
                 headers: {
@@ -68,17 +78,20 @@ const DetailsPage = (props) => {
             )
     
             if(resData.status === 200){
+
+                setDispModal(false)
                 alert('password updated!!!')
                 window.location.href = '/password/view'
             }
         }catch(e){
+            setDispModal(false)
             alert(e)
         }
         
     }
 
     const fetchPassword = async () => {
-
+        setDispModal(true)
         const myAPI = `${process.env.REACT_APP_API}passwords?_id=${id}`
 
         try{
@@ -92,20 +105,24 @@ const DetailsPage = (props) => {
             
             axios.get(myAPI, config).then( (res) => {
 
-
                 setDetails({
                     password: res.data.password,
                     website: res.data.website,
                     username: res.data.username
                 })
+                setDispModal(false)
             })
         }catch{
+            setDispModal(false)
         }
     }
 
     const addPassword = async () => {
 
         try{
+
+            setDispModal(true)
+
             const myAPI = `${process.env.REACT_APP_API}passwords/add`
             let config = {
               mode: 'no-cors',
@@ -116,33 +133,35 @@ const DetailsPage = (props) => {
   
             axios.post(myAPI, details, config).then( (res) => {
               if(res.status === 200){
+                    setDispModal(false)
                   alert('password added!!!')
                   window.location.href = '/password/view'
               }
   
             }).catch( (e) => {
-                
-            })
+                setDispModal(false)
+            })  
           }catch{
-    
+            setDispModal(false)
           }
     }
 
     const register = async () => {
 
-        
-
         try{
+            setDispModal(true)
             const resData = await axios.post(
                 `${process.env.REACT_APP_API}user/register`,
                 details
             )
             if(resData.status === 200){
                 localStorage.setItem('token', resData.data.token)
+                setDispModal(false)
                 alert('account created!!')
                 window.location.href='/password/view'
             }
         }catch(e){
+            setDispModal(false)
             alert(`${e}`)
         }
     }
@@ -189,6 +208,8 @@ const DetailsPage = (props) => {
                     [saveas]: e.target.value
                 })
                 break;
+            default:
+                break;
         }
     }
 
@@ -217,6 +238,8 @@ const DetailsPage = (props) => {
         case 'savePassword':
             mainAcion = savePassword
             break;
+        default:
+            mainAcion = null
     }
 
     useEffect(() => {
@@ -227,6 +250,11 @@ const DetailsPage = (props) => {
 
     return (
         <>
+
+            {
+                dispModal &&
+                <Modal />
+            }
             
             {
                 props.setClose && 
