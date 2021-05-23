@@ -163,12 +163,14 @@ const DetailsPage = (props) => {
         }catch(e){
             setDispModal(false)
             alert(`${e}`)
+        }finally{
+            setDispModal(false)
         }
     }
 
     const login = async () => {
         try{
-            
+            setDispModal(true)
             const response = await axios.post(
                 `${process.env.REACT_APP_API}user/login`,
                 details
@@ -183,6 +185,8 @@ const DetailsPage = (props) => {
             }
         }catch{
             alert('something went wrong!!')
+        }finally{
+            setDispModal(false)
         }
     }
 
@@ -243,9 +247,15 @@ const DetailsPage = (props) => {
     }
 
     useEffect(() => {
-        if(props.fetchPassword){
-            fetchPassword()
+
+        function onLoadFun(){
+            if(props.fetchPassword){
+                fetchPassword()
+            }
         }
+
+        onLoadFun();
+        
     }, [])
 
     return (
