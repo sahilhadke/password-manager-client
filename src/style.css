@@ -66,7 +66,7 @@ body {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   right: 30px;
-  color: #2643C4;
+  color: #F73D93;
 }
 
 .top-nav .icon-col {
@@ -80,7 +80,7 @@ body {
           transform: translateY(-50%);
   position: absolute;
   top: 50%;
-  color: #2643C4;
+  color: #F73D93;
 }
 
 .top-nav .row {
@@ -164,7 +164,7 @@ body {
   bottom: 20px;
   cursor: pointer;
   right: 20px;
-  background: #2643C4;
+  background: #F73D93;
   -webkit-box-shadow: 0 1px 18px 1px #ADBAEB;
           box-shadow: 0 1px 18px 1px #ADBAEB;
   height: 50px;
@@ -185,7 +185,7 @@ body {
   right: 20px;
   background: transparent;
   cursor: pointer;
-  border: 1px solid #2643C4;
+  border: 1px solid #F73D93;
   height: 50px;
   border-radius: 30px;
   width: 50px;
@@ -194,7 +194,7 @@ body {
 
 .close-button i {
   line-height: 50px;
-  color: #2643C4;
+  color: #F73D93;
   font-size: 20px;
   text-align: center;
 }
@@ -226,7 +226,7 @@ body {
   cursor: pointer;
   bottom: 20px;
   right: 20px;
-  background: #2643C4;
+  background: #F73D93;
   -webkit-box-shadow: 0 1px 18px 1px #ADBAEB;
           box-shadow: 0 1px 18px 1px #ADBAEB;
   height: 50px;
@@ -307,7 +307,7 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  background: #2643C4;
+  background: #F73D93;
   border: none;
   width: 200px;
   height: 40px;
