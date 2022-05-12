@@ -301,6 +301,7 @@ const DetailsPage = (props) => {
                         path='/register'
                         text='register'
                     />
+                            <p>Forgot Password?</p>
 
                 </div>
             }
